@@ -14,6 +14,12 @@ public class DeepestPitAnswer
         // Index that we move from left to right
         int currentIndex = 0;
 
-        throw new NotImplementedException("Not completed yet");
+        // We need at least 2 elements ahead to form P, Q, R
+        while (currentIndex < length - 2)
+        {
+            break;
+        }
+
+        return deepestPitDepth;
     }
 }
