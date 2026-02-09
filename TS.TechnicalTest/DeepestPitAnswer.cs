@@ -8,6 +8,12 @@ public class DeepestPitAnswer
         if (points == null || points.Length < 3)
             return -1;
 
+        int length = points.Length;
+        int deepestPitDepth = -1;
+
+        // Index that we move from left to right
+        int currentIndex = 0;
+
         throw new NotImplementedException("Not completed yet");
     }
 }
