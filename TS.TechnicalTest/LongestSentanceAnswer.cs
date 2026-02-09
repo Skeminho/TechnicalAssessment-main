@@ -19,6 +19,9 @@ public class LongestSentanceAnswer
         {
             string sentence = sentences[i];
 
+            // Split words by spaces (ignore extra spaces).
+            string[] words = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
         }
 
         // Step 5: Return that biggest count.
