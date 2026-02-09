@@ -55,7 +55,25 @@ public class DeepestPitAnswer
                 continue;
             }
 
-            break;
+            // 4) Validate pit and compute depth
+            int startHeight = points[startOfDescentIndex];
+            int bottomHeight = points[bottomIndex];
+            int endHeight = points[endOfAscentIndex];
+
+            // Only count pit if decline started at/above ground 
+            if (startHeight >= 0)
+            {
+                int depthLeft = startHeight - bottomHeight;
+                int depthRight = endHeight - bottomHeight;
+
+                int pitDepth = Math.Min(depthLeft, depthRight);
+
+                if (pitDepth > deepestPitDepth)
+                {
+                    deepestPitDepth = pitDepth;
+                }
+            }
+
         }
 
         return deepestPitDepth;
