@@ -18,13 +18,27 @@ public class DeepestPitAnswer
         while (currentIndex < length - 2)
         {
             // 1) Find start of descent (P)
-            // Move forward until the next point is lower.
             while (currentIndex < length - 1 && points[currentIndex] <= points[currentIndex + 1])
             {
                 currentIndex++;
             }
 
             int startOfDescentIndex = currentIndex;
+
+            // 2) Walk down to the bottom (Q)
+            while (currentIndex < length - 1 && points[currentIndex] > points[currentIndex + 1])
+            {
+                currentIndex++;
+            }
+
+            int bottomIndex = currentIndex;
+
+            // If we did not move, there was no descent
+            if (bottomIndex == startOfDescentIndex)
+            {
+                currentIndex++;
+                continue;
+            }
 
             break; 
         }
