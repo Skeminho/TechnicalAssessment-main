@@ -40,7 +40,22 @@ public class DeepestPitAnswer
                 continue;
             }
 
-            break; 
+            // 3) Walk up the right slope (R)
+            while (currentIndex < length - 1 && points[currentIndex] < points[currentIndex + 1])
+            {
+                currentIndex++;
+            }
+
+            int endOfAscentIndex = currentIndex;
+
+            // If we did not move up from the bottom, there is no pit
+            if (endOfAscentIndex == bottomIndex)
+            {
+                currentIndex++;
+                continue;
+            }
+
+            break;
         }
 
         return deepestPitDepth;
