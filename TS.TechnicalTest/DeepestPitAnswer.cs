@@ -17,7 +17,16 @@ public class DeepestPitAnswer
         // We need at least 2 elements ahead to form P, Q, R
         while (currentIndex < length - 2)
         {
-            break;
+            // 1) Find start of descent (P)
+            // Move forward until the next point is lower.
+            while (currentIndex < length - 1 && points[currentIndex] <= points[currentIndex + 1])
+            {
+                currentIndex++;
+            }
+
+            int startOfDescentIndex = currentIndex;
+
+            break; 
         }
 
         return deepestPitDepth;
