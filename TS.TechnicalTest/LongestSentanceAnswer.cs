@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace TS.TechnicalTest;
 
 public class LongestSentanceAnswer
@@ -22,6 +24,18 @@ public class LongestSentanceAnswer
             // Split words by spaces (ignore extra spaces).
             string[] words = sentence.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
+            int count = 0;
+
+            // Count only valid words (must contain at least one letter).
+            for (int j = 0; j < words.Length; j++)
+            {
+                if (words[j].Any(char.IsLetter))
+                    count++;
+            }
+
+            // If this sentence has more words, keep it as the best so far.
+            if (count > maxWords)
+                maxWords = count;
         }
 
         // Step 5: Return that biggest count.
