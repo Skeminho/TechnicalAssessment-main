@@ -8,6 +8,9 @@ public class LongestSentanceAnswer
         if (string.IsNullOrWhiteSpace(s))
             return 0;
 
+        // Step 2: Split the text into sentences using '.', '?', '!'.
+        string[] sentences = s.Split(['.', '?', '!']);
+
         throw new NotImplementedException("Not completed yet");
     }
 }
